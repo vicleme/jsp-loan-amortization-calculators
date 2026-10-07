@@ -11,6 +11,12 @@
 
 Aplicação web educacional em JSP com três calculadoras de amortização de empréstimos: **SAC** (amortização constante), **SAA** (sistema americano) e **Tabela Price** (sistema francês). Cada uma mostra parcela, amortização, juros e saldo devedor de todos os meses. Foi um trabalho em equipe da disciplina de Programação Orientada a Objetos (Fatec Praia Grande, 2020/2).
 
+## Demo online
+
+<https://jsp-loan-amortization-calculators.onrender.com/Proj01_Amortizacao/home.jsp>
+
+O demo roda no plano gratuito do Render, que hiberna após cerca de 15 minutos sem acessos, então o primeiro carregamento pode levar até um minuto.
+
 ## Funcionalidades
 
 - **SAC**: o principal é pago em partes iguais, então as parcelas começam altas e diminuem.
@@ -22,7 +28,13 @@ Aplicação web educacional em JSP com três calculadoras de amortização de em
 
 ## Capturas de tela
 
-<!-- adicionadas após o primeiro deploy -->
+| Início | SAC |
+| --- | --- |
+| ![Página inicial](docs/screenshots/home.png) | ![Tabela SAC](docs/screenshots/sac-table.png) |
+
+| SAA (sistema americano) | Tabela Price |
+| --- | --- |
+| ![Tabela SAA](docs/screenshots/saa-table.png) | ![Tabela Price](docs/screenshots/price-table.png) |
 
 ## Tecnologias
 

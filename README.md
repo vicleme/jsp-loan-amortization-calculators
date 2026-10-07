@@ -9,6 +9,12 @@
 
 Educational JSP web app with three loan amortization calculators: **SAC** (constant amortization), **SAA** (American system) and **Price table** (French system). Each one shows the installment, amortization, interest and outstanding balance of every month. It was a team project for the Object-Oriented Programming course (Fatec Praia Grande, 2020/2).
 
+## Live demo
+
+<https://jsp-loan-amortization-calculators.onrender.com/Proj01_Amortizacao/home.jsp>
+
+The demo runs on Render's free plan, which sleeps after about 15 minutes without visits, so the first load can take up to a minute.
+
 ## Features
 
 - **SAC**: the principal is repaid in equal parts, so installments start high and decrease.
@@ -20,7 +26,13 @@ Educational JSP web app with three loan amortization calculators: **SAC** (const
 
 ## Screenshots
 
-<!-- added after the first deploy -->
+| Home | SAC |
+| --- | --- |
+| ![Home page](docs/screenshots/home.png) | ![SAC table](docs/screenshots/sac-table.png) |
+
+| SAA (American system) | Price table |
+| --- | --- |
+| ![SAA table](docs/screenshots/saa-table.png) | ![Price table](docs/screenshots/price-table.png) |
 
 ## Tech stack
 
