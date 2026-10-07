@@ -1,2 +1,18 @@
+# Build output
 /Proj01_Amortizacao/build/
 /Proj01_Amortizacao/dist/
+*.class
+*.war
+
+# NetBeans private state (local paths, open files)
+nbproject/private/
+
+# Other IDEs
+.idea/
+.vscode/
+*.iml
+
+# OS files
+desktop.ini
+Thumbs.db
+.DS_Store

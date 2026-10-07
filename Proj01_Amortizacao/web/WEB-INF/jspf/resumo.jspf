@@ -1,0 +1,20 @@
+<%-- Summary of the validated input, shown above the schedule. --%>
+<%@page pageEncoding="UTF-8"%>
+<table class="tabela">
+    <thead>
+        <tr>
+            <th scope="col">Valor financiado</th>
+            <th scope="col">Taxa de juros</th>
+            <th scope="col">Número de meses</th>
+            <th scope="col">Periodicidade da taxa</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="numero"><%=dinheiro.format(vf)%></td>
+            <td class="numero"><%=tj%>%</td>
+            <td class="numero"><%=nm%></td>
+            <td class="numero"><%=pt == 1 ? "Mensal" : "Anual"%></td>
+        </tr>
+    </tbody>
+</table>

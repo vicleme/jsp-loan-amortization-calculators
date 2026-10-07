@@ -1,0 +1,26 @@
+<%-- Input form shared by the three calculators. Uses the limits declared in parametros.jspf. --%>
+<%@page pageEncoding="UTF-8"%>
+<div class="calculadora">
+    <form class="calculadora">
+        <div class="calculadora-campos">
+            <div class="coluna">
+                <label for="vf">Valor financiado:</label>
+                <input id="vf" type="number" name="vf" step="0.01" min="0.01" max="<%=(long) VALOR_MAXIMO%>" required>
+                <label for="tj">Taxa de juros (%):</label>
+                <input id="tj" type="number" name="tj" step="0.01" min="0" max="<%=(int) JUROS_MAXIMO%>" required>
+            </div>
+            <div class="coluna">
+                <label for="nm">Número de meses:</label>
+                <input id="nm" type="number" name="nm" step="1" min="1" max="<%=MESES_MAXIMO%>" required>
+                <label for="pt">Periodicidade da taxa:</label>
+                <select id="pt" name="pt">
+                    <option value="1">Mensal</option>
+                    <option value="2">Anual</option>
+                </select>
+            </div>
+        </div>
+        <div class="botao">
+            <input type="submit" value="Calcular" class="botao-calcular">
+        </div>
+    </form>
+</div>

@@ -1,8 +1,7 @@
-
 <%-- any content can be specified here e.g.: --%>
 <%@ page pageEncoding="UTF-8" %>
 <div>
-    <hr/>
-    <div align="center">Desenvolvido na disciplina de POO - <small>Prof. Ricardo Pupo Larguesa</small></div>
-    <div align="center" style="padding-bottom:15px"><small>Ewerton Luiz Lima de Souza, Sávio Gabriel Santos Gois e Victor Gabriel Leme da Silva</small></div>
+    <hr>
+    <div class="centro">Desenvolvido na disciplina de POO, Fatec Praia Grande, 2020</div>
+    <div class="centro rodape-autores"><small>Ewerton Souza, Sávio Gois e Victor Leme</small></div>
 </div>

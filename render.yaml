@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: jsp-loan-amortization-calculators
+    runtime: docker
+    plan: free
+    region: oregon
+    branch: master
+    healthCheckPath: /Proj01_Amortizacao/home.jsp
+    autoDeploy: true
+    envVars:
+      - key: PORT
+        value: "8080"

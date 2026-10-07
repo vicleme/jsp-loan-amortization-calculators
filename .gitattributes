@@ -1,2 +1,15 @@
-# Auto detect text files and perform LF normalization
+# Normalize line endings: text files are stored with LF
 * text=auto
+*.jsp text eol=lf
+*.jspf text eol=lf
+*.css text eol=lf
+*.xml text eol=lf
+*.md text eol=lf
+*.yaml text eol=lf
+Dockerfile text eol=lf
+
+# Binary files
+*.jpg binary
+*.png binary
+*.psd binary
+*.jar binary

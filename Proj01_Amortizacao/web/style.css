@@ -1,9 +1,4 @@
 /*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
     Created on : 5 de set de 2020, 16:25:22
     Author     : Victor
 */
@@ -29,7 +24,7 @@ div.calculadora-campos{
 }
 
 .coluna {
-  padding:10px;
+  padding:10px 10px 5px;
 }
 
 .coluna input, .coluna select {
@@ -37,8 +32,18 @@ div.calculadora-campos{
 }
 
 input, select {
-    width:182px; 
+    width:182px;
     height: 30px;
+}
+
+.botao {
+    text-align:center;
+    padding-bottom:10px;
+}
+
+.botao-calcular {
+    background-color:#017269;
+    color:white;
 }
 
 th{
@@ -46,6 +51,50 @@ th{
     padding-bottom:10px;
     padding-left:20px;
     padding-right:20px;
+}
+
+/* result tables */
+table.tabela {
+    margin:0 auto 1rem;
+    border:1px solid gray;
+}
+
+table.tabela th, table.tabela td {
+    border:1px solid gray;
+}
+
+.numero {
+    text-align:right;
+    padding-right:10px;
+}
+
+.centro {
+    text-align:center;
+}
+
+.rotulo-total {
+    padding-left:15px;
+    padding-right:15px;
+}
+
+.rodape-autores {
+    padding-bottom:15px;
+}
+
+.mensagem {
+    margin-top:1rem;
+    text-align:center;
+}
+
+/* home page diagram */
+table.fluxo {
+    margin:0 auto;
+}
+
+div.seta {
+    color:#017269;
+    text-align:center;
+    padding:0 2rem;
 }
 
 #container{

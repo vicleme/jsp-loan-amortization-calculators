@@ -1,0 +1,70 @@
+<%--
+    Reads and validates the request parameters shared by the three calculators.
+
+    Variables exposed to the including page:
+      vf        financed amount (loan principal)
+      tj        interest rate, in percent
+      nm        number of months
+      pt        rate period: 1 = monthly, 2 = annual
+      tjc       monthly rate as a fraction (an annual rate is converted to its
+                equivalent monthly rate)
+      enviado   true when the form was submitted
+      erro      validation message, or null when the input is valid
+      dinheiro  currency formatter (pt-BR)
+
+    The limits also protect the public demo from absurd requests (for example,
+    hundreds of millions of installments).
+--%>
+<%@page import="java.util.Locale"%>
+<%@page import="java.text.NumberFormat"%>
+<%@page pageEncoding="UTF-8"%>
+<%
+    final double VALOR_MAXIMO = 1.0E8;
+    final double JUROS_MAXIMO = 1000;
+    final int MESES_MAXIMO = 600;
+
+    NumberFormat dinheiro = NumberFormat.getCurrencyInstance(Locale.forLanguageTag("pt-BR"));
+
+    boolean enviado = request.getParameter("vf") != null
+            || request.getParameter("tj") != null
+            || request.getParameter("nm") != null
+            || request.getParameter("pt") != null;
+    String erro = null;
+    double vf = 0;
+    double tj = 0;
+    double tjc = 0;
+    int nm = 0;
+    int pt = 1;
+
+    if (enviado) {
+        try {
+            vf = Double.parseDouble(request.getParameter("vf").trim());
+            tj = Double.parseDouble(request.getParameter("tj").trim());
+            nm = Integer.parseInt(request.getParameter("nm").trim());
+            pt = Integer.parseInt(request.getParameter("pt").trim());
+        } catch (Exception ex) {
+            // missing parameter (NullPointerException) or not a number (NumberFormatException)
+            erro = "Valor(es) inválido(s) como parâmetro.";
+        }
+        if (erro == null) {
+            // the negated comparisons also reject NaN
+            if (!(vf > 0) || vf > VALOR_MAXIMO) {
+                erro = "O valor financiado deve ser maior que zero e no máximo "
+                        + dinheiro.format(VALOR_MAXIMO) + ".";
+            } else if (!(tj >= 0) || tj > JUROS_MAXIMO) {
+                erro = "A taxa de juros deve estar entre 0% e " + (int) JUROS_MAXIMO + "%.";
+            } else if (nm < 1 || nm > MESES_MAXIMO) {
+                erro = "O número de meses deve ser um inteiro entre 1 e " + MESES_MAXIMO + ".";
+            } else if (pt != 1 && pt != 2) {
+                erro = "A periodicidade da taxa deve ser mensal (1) ou anual (2).";
+            }
+        }
+        if (erro == null) {
+            tjc = tj / 100;
+            if (pt == 2) {
+                // annual rate -> equivalent monthly rate
+                tjc = Math.pow(1 + tjc, 1.0 / 12) - 1;
+            }
+        }
+    }
+%>
